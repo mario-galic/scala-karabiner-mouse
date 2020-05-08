@@ -1,0 +1,168 @@
+{
+  "title": "IntelliJ Scala mouse buttons",
+  "rules": [
+    {
+      "description": "IntelliJ Scala mouse buttons",
+      "manipulators": [
+        {
+          "description": "Show Implicit Hints - Select",
+          "type": "basic",
+          "conditions": [
+            {
+              "name": "Show Implicit Hints",
+              "type": "variable_if",
+              "value": 0
+            },
+            {
+              "bundle_identifiers": ["^com\\.jetbrains\\.intellij$"],
+              "type": "frontmost_application_if"
+            }
+          ],
+          "from": {
+            "pointing_button": "button5",
+            "modifiers": {
+              "mandatory": [
+                "fn"
+              ]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "Show Implicit Hints",
+                "value": 1
+              }
+            },
+            {
+              "key_code": "equal_sign",
+              "modifiers": [
+                "left_control",
+                "left_option",
+                "left_shift"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "Show Implicit Hints - Deselect",
+          "type": "basic",
+          "conditions": [
+            {
+              "name": "Show Implicit Hints",
+              "type": "variable_if",
+              "value": 1
+            },
+            {
+              "bundle_identifiers": ["^com\\.jetbrains\\.intellij$"],
+              "type": "frontmost_application_if"
+            }
+          ],
+          "from": {
+            "pointing_button": "button5",
+            "modifiers": {
+              "mandatory": [
+                "fn"
+              ]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "Show Implicit Hints",
+                "value": 0
+              }
+            },
+            {
+              "key_code": "hyphen",
+              "modifiers": [
+                "left_control",
+                "left_option",
+                "left_shift"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "Run Scala Worksheet",
+          "type": "basic",
+          "conditions": [
+            {
+              "bundle_identifiers": ["^com\\.jetbrains\\.intellij$"],
+              "type": "frontmost_application_if"
+            }
+          ],
+          "from": {
+            "pointing_button": "button1",
+            "modifiers": {
+              "mandatory": [
+                "fn"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "w",
+              "modifiers": [
+                "left_gui",
+                "left_option"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "Clean Scala Worksheet",
+          "type": "basic",
+          "conditions": [
+            {
+              "bundle_identifiers": ["^com\\.jetbrains\\.intellij$"],
+              "type": "frontmost_application_if"
+            }
+          ],
+          "from": {
+            "pointing_button": "button2",
+            "modifiers": {
+              "mandatory": [
+                "fn"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "w",
+              "modifiers": [
+                "left_control",
+                "left_option"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "Hide Active Tool Window",
+          "type": "basic",
+          "conditions": [
+            {
+              "bundle_identifiers": ["^com\\.jetbrains\\.intellij$"],
+              "type": "frontmost_application_if"
+            }
+          ],
+          "from": {
+            "pointing_button": "button4",
+            "modifiers": {
+              "mandatory": [
+                "fn"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "escape",
+              "modifiers": [
+                "left_shift"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
